@@ -19,6 +19,8 @@ dir_alg="reds" # Use REDs algorithm
 path_alg="local" # Use local version
 seed=0 # Seed point
 
+results_dir="./results"
+
 python main.py \
 --gpu ${gpu} \
 --seed_file ${seed_file} \
@@ -33,4 +35,5 @@ python main.py \
 --path_alg ${path_alg} \
 --syn_alg ${syn_alg} \
 --seed ${seed} \
---im_size ${im_size}
+--im_size ${im_size} \
+--results_dir ${results_dir}

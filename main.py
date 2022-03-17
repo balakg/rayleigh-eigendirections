@@ -186,13 +186,13 @@ if __name__ == "__main__":
     parser.add_argument('--dir_alg', type=str, choices=['minf', 'maxc', 'reds', 'rand'], required=True)
     parser.add_argument('--path_alg', type=str, choices=['linear', 'local'], required=True)
     parser.add_argument('--seed', type=int)
+    parser.add_argument('--results_dir', type=str)
     config = parser.parse_args()
 
     if len(config.beta_f) != len(config.f):
         raise ValueError('betas should be same length as fixed fucntions')
 
-    base_dir = "/data/vision/billf/scratch/balakg/reds"
-    config.save_dir = "%s/results/%s/%s_%s/" % (base_dir, config.syn_alg, config.dir_alg, config.path_alg)
+    config.save_dir = "%s/%s/%s_%s/" % (config.results_dir, config.syn_alg, config.dir_alg, config.path_alg)
 
     if config.dir_alg == 'maxc':
         config.save_dir += config.c
