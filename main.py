@@ -29,10 +29,9 @@ def main(config):
     else:
         raise ValueError('Invalid synthesis model!')
 
-
     # Get all feature functions
     funcs = []
-    dev = 'cuda:1'
+    dev = 'cuda:1' # All feature extraction models will use second gpu.
 
     # id, region, landmark points, attribute
     for name in config.f + [config.c]:
@@ -91,12 +90,11 @@ def main(config):
         funcs.append( func )
 
     generate_traversals(z, generator, funcs, config)
+
     #filt = freq_models.HighPass(2, True, 'cuda:1')
     #filt_func = utils.filter(filt, 'cuda:1')
-
     #im = generator(z) 
     #im_filt = filt_func(im)
-
     #imageio.imwrite('test.jpg', im_filt[0,...])
 
 
@@ -104,7 +102,7 @@ def get_local_directions(z, generator, funcs, config, two_sided=True):
 
     def jacobian_to_grammian(J, eps=1e-9):
         A = np.matmul(J.T, J)
-        A += np.random.randn(*A.shape) * eps # To avoid any singular issues
+        A += np.random.randn(*A.shape) * eps # To avoid any singular matrix issues, add noise.
         return A/np.linalg.norm(A)
 
     if config.dir_alg == 'rand':
@@ -203,7 +201,7 @@ if __name__ == "__main__":
 
     if config.dir_alg not in ['rand', 'maxc']:
         for beta in config.beta_f:
-            config.save_dir += ",%.7f" % beta 
+            config.save_dir += ",%.5f" % beta 
 
     # Save directory name
     if not os.path.exists(config.save_dir):
