@@ -13,8 +13,8 @@ https://drive.google.com/file/d/1o3pw4LzT8MtsE0oOzakvpaFc2InW58VD/view?usp=shari
 https://drive.google.com/file/d/1x1WU62deZppzwUWitK3K2n1vmvMddTJM/view?usp=sharing and move the file into insightface/.
 
 # Run REDs algorithm
-Set variables in run_main.sh. Right now, the script expects two GPUs available, one for the GAN
-and one for evaluating features. Then run:
+Set variables in run_main.sh. Right now, the script expects two GPUs as command line arguments, one for the GAN
+and one for evaluating features. E.g., run:
 ```.bash
- bash ./run_main.sh 0 1 0.99 
+ bash ./run_main.sh 0 1 
 ```
