@@ -3,16 +3,16 @@
 gpu="$1 $2"
 
 # Args for all StyleGAN2 experiments
-seed_file='seeds/W_diverse.npy' #use biggan_sample_seeds.npz for biggan
+seed_file='seeds/W_diverse.npy' #use "seeds/biggan_sample_seeds.npz" for biggan
 step=1
 n_eig=3
 n_step=3
-syn_alg="stylegan2"  #biggan
+syn_alg="stylegan2"  #or "biggan"
 im_size=256   #128 for biggan
 
 
-f="r_all_hi_2" # Fix high frequencies with sigma = 2 blur kernel
-c="r_all_lo_2" # Change low frequencies with sigma = 2 blur kernel
+f="r_all_hi_2" # Fix high frequencies with sigma = 2 Gaussian blur kernel
+c="r_all_lo_2" # Change low frequencies with sigma = 2 Gaussian blur kernel
 beta_f=0.99 # Beta for fixed attribute.
 beta_c=0.999  # Beta for changing attribute.
 dir_alg="reds" # Use REDs algorithm
