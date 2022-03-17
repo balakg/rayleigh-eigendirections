@@ -65,16 +65,11 @@ def main(config):
     if not os.path.exists("%s/dists" % config.save_dir):
         os.makedirs("%s/dists" % config.save_dir)
 
-    pool = [0,1,2,4,7,9,10,19,20,21,25,27,35,36,38,40,42,43,46,47,48,49,51,52,55,57,58,60,61,63,64]
-    for seed in pool: #range(z0.shape[0]):
-        print(seed)
-        Z = np.load("%s/%.2d_Z.npy" % (config.save_dir, seed))
-        save(Z, generator, funcs, config, seed)
+    Z = np.load("%s/%.2d_Z.npy" % (config.save_dir, config.seed))
+    save(Z, generator, funcs, config, config.seed)
 
 
 def save(Z, generator, funcs, config, seed):
-
-
     im0 = generator(Z[0, 0:1, :])
     F = []
     D = []
@@ -110,7 +105,7 @@ if __name__ == "__main__":
     parser.add_argument('--im_size', type=int, default=256)
     parser.add_argument('--save_funcs', type=str, nargs='+')
     parser.add_argument('--save_dir', type=str)
+    parser.add_argument('--seed', type=int)
 
     config = parser.parse_args()
-    np.random.seed(4321)
     main(config)

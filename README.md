@@ -24,3 +24,7 @@ and one for evaluating features. E.g., run:
 ```.bash
  bash ./run_main.sh 0 1 
 ```
+
+You will find image results and corresponding latent codes saved to the results directory. If you also need feature distances for further analysis, you can save them by running run_save_distances.sh with the appropriate feature functions and experiments selected. More details on this will be added soon. 
+
+
