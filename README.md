@@ -18,7 +18,7 @@ https://drive.google.com/file/d/1x1WU62deZppzwUWitK3K2n1vmvMddTJM/view?usp=shari
 # Other Requirements
 1. See StyleGAN2 system [requirements](https://github.com/NVlabs/stylegan2). Tensorflow 1.14/1.15 and Cuda 10 toolkits are required. 
 
-# Run REDs algorithm
+# Running Algorithm
 Set variables in run_main.sh. Right now, the script expects two GPUs as command line arguments, one for the GAN
 and one for evaluating features. E.g., run:
 ```.bash
