@@ -1,7 +1,7 @@
 # rayleigh-eigendirections
 Rayleigh EigenDirections (REDs) main repository.
 
-![Changing hairstyle](https://github.com/balakg/rayleigh-eigendirections/stylegan2_hair.jpg?raw=true)
+![Changing hairstyle](https://github.com/balakg/rayleigh-eigendirections/blog/main/example-images/stylegan2_hair.jpg?raw=true)
 
 
 # Download external models
