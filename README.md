@@ -20,7 +20,7 @@ https://drive.google.com/file/d/1x1WU62deZppzwUWitK3K2n1vmvMddTJM/view?usp=shari
 
 # Running Algorithm
 Set variables in run_main.sh. Right now, the script expects two GPUs as command line arguments, one for the GAN
-and one for evaluating features. See example feature specifications below. To run script:
+and one for evaluating features. Specify fixed and changing features with strings. Example string specifications are given below. To run script:
 ```.bash
  bash ./run_main.sh 0 1 
 ```
@@ -31,7 +31,7 @@ You will find image results and corresponding latent codes saved to the results 
 ## Example string specifications for features
 1. "id": identity
 2. "r_head_seg": pixels within head region according to segmentation network
-3. "r_eyes_coord": pixels within bounding box around eyes (fixed coordinates defined by lowrankgan work)
+3. "r_eyes_coord": pixels within bounding box around eyes (fixed coordinates defined by LowRankGAN work)
 4. "r_no-head_seg": pixels outside of the head region 
 5. "r_all": all pixels
 6. "r_head_seg_lo_2": pixels within head region + low pass filter using gaussian filter, sigma = 2
