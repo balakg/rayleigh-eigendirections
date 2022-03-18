@@ -28,7 +28,9 @@ and one for evaluating features. Specify fixed and changing features with string
 You will find image results and corresponding latent codes saved to the results directory. If you also need feature distances for further analysis, you can save them by running run_save_distances.sh with the appropriate feature functions and experiments selected. More details on this will be added soon. 
 
 
-## Example string specifications for features
+## String specifications for features
+Each feature string starts with one of four keys: id (identity), r (region), l (landmarks), a (attributes). Some example strings are given below:
+
 1. "id": identity
 2. "r_head_seg": pixels within head region according to segmentation network
 3. "r_eyes_coord": pixels within bounding box around eyes (fixed coordinates defined by LowRankGAN work)
