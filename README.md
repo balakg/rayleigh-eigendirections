@@ -1,11 +1,11 @@
 # rayleigh-eigendirections
 Rayleigh EigenDirections (REDs) main repository.
 
-Example using StyleGAN2 of changing hairstyle while holding geometry and identity fixed:
+Example using StyleGAN2 of changing hairstyle while holding geometry and identity fixed. The seed image is the leftmost column, and each row is a different trajectory produced by our algorithm:
 ![Changing hairstyle](https://github.com/balakg/rayleigh-eigendirections/blob/main/example-images/stylegan2_hair.jpg?raw=true)
 
 
-Example using BigGAN of fixing high spatial frequencies and changing low spatial frequencies:
+Example using BigGAN of fixing high spatial frequencies and changing low spatial frequencies. The seed image is the leftmost column, and each row is a different trajectory produced by our algorithm:
 ![Changing hairstyle](https://github.com/balakg/rayleigh-eigendirections/blob/main/example-images/biggan_freq.jpg?raw=true)
 
 
@@ -29,7 +29,7 @@ https://drive.google.com/file/d/1x1WU62deZppzwUWitK3K2n1vmvMddTJM/view?usp=shari
 Set variables in run_main.sh. Right now, the script expects two GPUs as command line arguments, one for the GAN
 and one for evaluating features. Specify fixed and changing features with strings. Example string specifications are given below. To run script:
 ```.bash
- bash ./run_main.sh 0 1 
+ bash ./run_main.sh <gpu id 0> <gpu id 1> 
 ```
 
 You will find image results and corresponding latent codes saved to the results directory. If you also need feature distances for further analysis, you can save them by running run_save_distances.sh with the appropriate feature functions and experiments selected. More details on this will be added soon. 
