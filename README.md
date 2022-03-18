@@ -1,6 +1,8 @@
 # rayleigh-eigendirections
 Rayleigh EigenDirections (REDs) main repository.
 
+![Changing hairstyle](https://github.com/balakg/rayleigh-eigendirections/stylegan2_hair.jpg?raw=true)
+
 
 # Download external models
 1. Download [stylegan2-ffhq-config-f.pkl](https://nvlabs-fi-cdn.nvidia.com/stylegan2/networks/stylegan2-ffhq-config-f.pkl) from the NVIDIA stylegan2 repository and place file into stylegan2/. 
