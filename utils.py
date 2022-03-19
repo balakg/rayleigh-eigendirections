@@ -3,7 +3,6 @@ import numpy as np
 import cv2
 import torch
 import torch.nn.functional as F
-#from torchvision import models as tv
 import imageio
 
 
@@ -177,7 +176,6 @@ def mask_by_coordinates(region=None):
         s = im_in.shape[2]//256 # Scale coordinates based on image size.
         mask = np.zeros_like(im_in)
 
-        # Multiply all values by 4 for 1024x1024 images
         center_x, center_y = s*coordinate[0], s*coordinate[1]
         crop_x, crop_y = s*coordinate[2], s*coordinate[3]
         xx = center_x - crop_x // 2
@@ -283,6 +281,8 @@ def floattensor_to_npy(im):
     return im.permute(0, 2, 3, 1).detach().cpu().numpy()
 
 
+# ----- REDs ALGORITHM FUNCS ----- #
+
 def get_jacobian(x, step, batch, generator, funcs, two_sided=True):
 
     if x.ndim != 2 or x.shape[0] != 1:
@@ -368,9 +368,6 @@ def proj(u, v):
     return u * np.sum(u * v) / np.sum( u * u)
 
 
-"""
-Approach in Appendix D in overleaf
-"""
 def get_REDs(A_f, A_c, beta_f, beta_c):
 
     if len(A_c) > 1:
@@ -383,7 +380,6 @@ def get_REDs(A_f, A_c, beta_f, beta_c):
 
     V,_ = split_space_by_explained_variance(A_c_proj, beta_c)
     return np.matmul(A_f_null, V)
-
 
 
 def project_onto_subspace(x, V):

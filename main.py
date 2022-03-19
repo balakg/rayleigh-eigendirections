@@ -5,6 +5,7 @@ import numpy as np
 import imageio
 import torch
 import utils
+from tqdm import tqdm
 from functools import partial
 
 
@@ -141,7 +142,7 @@ def generate_traversals(z0, generator, funcs, config):
     im0 = generator(z0)
 
     # Make paths
-    for t in range(config.n_eig*2): # For each RED at seed point (pos/neg direction)
+    for t in tqdm(range(config.n_eig*2)): # For each RED at seed point (pos/neg direction)
         I.insert(255*im0[0,...], t, 0) #Add starting image
         Z[t, 0, :] = z0
 
