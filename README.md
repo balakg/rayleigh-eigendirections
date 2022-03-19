@@ -26,13 +26,15 @@ https://drive.google.com/file/d/1x1WU62deZppzwUWitK3K2n1vmvMddTJM/view?usp=shari
 1. See StyleGAN2 system [requirements](https://github.com/NVlabs/stylegan2). Tensorflow 1.14/1.15 and Cuda 10 toolkits are required. 
 
 # Running Algorithm
-To run the algorithm, run *main.py* with appropriate arguments. *reproduce_examples.sh* shows how to create the images in ./example-images/. Run:
+Run *main.py* with appropriate arguments. To create the images in ./example-images, run *reproduce_examples.sh*:
 ```.bash
  bash ./run_main.sh 
 ```
+You will find image results and corresponding latent codes saved to the results directory.
+
 Currently, *main.py* expects two GPUs as command line arguments, one for the GAN and one for evaluating features. Fixed and changing features are specified as strings -- example string specifications are given below.
 
-You will find image results and corresponding latent codes saved to the results directory. If you also need feature distances for further analysis, you can save them by running *run_save_distances.sh* with the appropriate feature functions and experiments selected. More details on this will be added soon. 
+If you also need feature distances for further analysis, you can save them by running *run_save_distances.sh* with the appropriate feature functions and experiments selected. More details on this will be added soon. 
 
 ## String specifications for features
 Each feature string starts with one of four keys: id (identity), r (region), l (landmarks), a (attributes). We give some example strings below:
