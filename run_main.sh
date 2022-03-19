@@ -6,7 +6,7 @@ dir_alg="reds" # Use REDs algorithm
 path_alg="local" # Use local version
 
 
-# Args to recreate example-images/stylegan2-example.jpg
+# Args to recreate example-images/stylegan2_hair.jpg
 seed_file='seeds/stylegan2_sample_styles.npy' 
 seed=1
 step=1
@@ -39,7 +39,7 @@ python main.py \
 
 
 
-# Args to recreate example-images/biggan-example.jpg
+# Args to recreate example-images/biggan_freq.jpg
 seed_file='seeds/biggan_sample_latents.npz' 
 seed=1
 step=1
