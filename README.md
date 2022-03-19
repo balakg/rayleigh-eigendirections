@@ -28,7 +28,7 @@ https://drive.google.com/file/d/1x1WU62deZppzwUWitK3K2n1vmvMddTJM/view?usp=shari
 # Running Algorithm
 Run *main.py* with appropriate arguments. To create the images in ./example-images, run *reproduce_examples.sh*:
 ```.bash
- bash ./run_main.sh 
+ bash ./reproduce_examples.sh 
 ```
 You will find image results and corresponding latent codes saved to the results directory.
 
