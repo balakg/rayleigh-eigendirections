@@ -56,6 +56,6 @@ The direction algorithm ('dir_alg' input to main.py) may be one of four choices:
 3. minf: only minimizes fixed features
 4. rand: random directions (useful as a baseline for comparison purposes)
 
-The path algorithm may be one of two choices:
-1. linear: After choosing a direction vector at the seed point (using one of the direction algorithms above), move along that vector to create a traversal. 
-2. local: Recompute the set of best local directions at each step of a traversal and project the previous direction vector onto the span of the local set.
+The traversal algorithm ('path_alg' input) may be one of two choices:
+1. linear: Moves along one direction vector, chosen by one of the direction algorithms listed above at the seed point. 
+2. local: Recomputes the set of best local directions at each step of a traversal and projects the previous direction vector onto the span of the local set.
